@@ -47,3 +47,6 @@ node_modules
 *.resources
 test-results/
 
+settings.json
+settings.development.json
+
