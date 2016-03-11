@@ -13,12 +13,14 @@ Meteor.startup(function() {
 
 if (Meteor.isClient) {
     Meteor.startup(function() {
-        GoogleMaps.load();
+        GoogleMaps.load({ v: '3', key: Meteor.settings.public.googleMapAPIKey, libraries: 'geometry,places' });
+
     });
 
-    Template.body.helpers({
+    Template.homeMap.helpers({
         exampleMapOptions: function() {
             // Make sure the maps API has loaded
+            console.log('map template body');
             if (GoogleMaps.loaded()) {
                 // Map initialization options
                 return {
@@ -29,7 +31,7 @@ if (Meteor.isClient) {
         }
     });
 
-    Template.body.onCreated(function() {
+    Template.homeMap.onCreated(function() {
         // We can use the `ready` callback to interact with the map API once the map is ready.
         GoogleMaps.ready('exampleMap', function(map) {
             // Add a marker to the map once it's ready
