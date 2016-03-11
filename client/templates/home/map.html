@@ -2,10 +2,9 @@
 <template name="homeMap">
     <h1>Hello google map </h1>
     <div class="content">
-        <div id="map" style="height:100%;">
-        <ui-gmap-google-map center="map.center" events="map.events" zoom="map.zoom">
-            this is under angular
-        </ui-gmap-google-map>
+        <div class="map-container">
+            {{> googleMap name="exampleMap" options=exampleMapOptions}}
         </div>
     </div>
+
 </template>

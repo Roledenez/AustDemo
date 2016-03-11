@@ -27,4 +27,5 @@ service-configuration
 http
 dburles:google-maps
 angularui:angular-google-maps
-angular
+blaze-html-templates
+ecmascript
